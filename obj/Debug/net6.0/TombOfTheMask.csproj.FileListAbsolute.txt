@@ -1,0 +1,15 @@
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/TombOfTheMask.csproj.AssemblyReference.cache
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/TombOfTheMask.GeneratedMSBuildEditorConfig.editorconfig
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/TombOfTheMask.AssemblyInfoInputs.cache
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/TombOfTheMask.AssemblyInfo.cs
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/TombOfTheMask.csproj.CoreCompileInputs.cache
+/Users/linhbao/Projects/TombOfTheMask/bin/Debug/net6.0/TombOfTheMask
+/Users/linhbao/Projects/TombOfTheMask/bin/Debug/net6.0/TombOfTheMask.deps.json
+/Users/linhbao/Projects/TombOfTheMask/bin/Debug/net6.0/TombOfTheMask.runtimeconfig.json
+/Users/linhbao/Projects/TombOfTheMask/bin/Debug/net6.0/TombOfTheMask.dll
+/Users/linhbao/Projects/TombOfTheMask/bin/Debug/net6.0/TombOfTheMask.pdb
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/TombOfTheMask.dll
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/refint/TombOfTheMask.dll
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/TombOfTheMask.pdb
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/TombOfTheMask.genruntimeconfig.cache
+/Users/linhbao/Projects/TombOfTheMask/obj/Debug/net6.0/ref/TombOfTheMask.dll
