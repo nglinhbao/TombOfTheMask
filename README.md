@@ -8,6 +8,12 @@ The users will be ranked by their current stage and the amount of time that they
 # UML diagram
 ![TOTM drawio](https://github.com/nglinhbao/TombOfTheMask/assets/110576552/64c52cac-78b1-4033-ae39-9189581e46f2)
 
+# Gameplay
+<img width="451" alt="image" src="https://github.com/nglinhbao/TombOfTheMask/assets/110576552/3c56c791-2068-46ed-b385-c2cc343aaf0f">
+<img width="451" alt="image" src="https://github.com/nglinhbao/TombOfTheMask/assets/110576552/c0859ae3-450a-480c-a6c9-656e939a77f5">
+<img width="451" alt="image" src="https://github.com/nglinhbao/TombOfTheMask/assets/110576552/c36bca48-96e5-42b5-b96f-599592f5b5c1">
+
+
 # Design patterns
 •	Factory method: a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. The code includes a TileFactory class that encapsulates the creation of Tile objects based on different types. The factory method CreateTile is responsible for creating the appropriate tile object based on the given type. This design pattern allows subclasses (RedTile, BlueTile, GreenTile, etc.) to define their specific implementations while the TileFactory provides a common interface for creating tiles. This promotes flexibility, extensibility, and separation of object creation logic from the client code.
 
