@@ -48,8 +48,8 @@ william
 1
 0
 ava
-4
-331
+2
+19
 joseph
 2
 20
@@ -58,4 +58,4 @@ grace
 0
 james
 3
-71
+77

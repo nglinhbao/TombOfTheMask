@@ -1,5 +1,6 @@
 ﻿using System;
 using SplashKitSDK;
+
 namespace TombOfTheMask
 {
     public class Heart : NormalObject
@@ -11,9 +12,10 @@ namespace TombOfTheMask
             this.Image = _heartBitMap;
         }
 
+        // Overrides the Update method of the base class.
         public override void Update()
         {
+            // No implementation in this case
         }
     }
 }
-

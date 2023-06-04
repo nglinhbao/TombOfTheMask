@@ -13,12 +13,14 @@ public class GameModel
         _currentUser = null;
     }
 
+    // Loads the map based on the current user's current stage
     public void LoadMap()
     {
         _map = new Map(Color.Black);
         _map.LoadMap(CurrentUser.CurrentStage);
     }
 
+    // Updates the current user
     public void UpdateCurrentUser()
     {
         if (_currentUser != null)
@@ -27,6 +29,7 @@ public class GameModel
         }
     }
 
+    // Updates the game (map)
     public void UpdateGame()
     {
         if (_map != null)
@@ -35,6 +38,7 @@ public class GameModel
         }
     }
 
+    // Updates the current stage
     public void UpdateStage()
     {
         if (_currentUser != null && _map != null)
@@ -52,18 +56,21 @@ public class GameModel
         }
     }
 
+    // Gets or sets the game state
     public string State
     {
         get { return _state; }
         set { _state = value; }
     }
 
+    // Gets or sets the current user
     public User CurrentUser
     {
         get { return _currentUser; }
         set { _currentUser = value; }
     }
 
+    // Gets the current map
     public Map CurrentMap
     {
         get { return _map; }

@@ -4,9 +4,10 @@ using SplashKitSDK;
 
 namespace TombOfTheMask
 {
+    // Represents the home screen of the game.
     public class Home : Screen
     {
-        private List<User> _users = new List<User> { };
+        private List<User> _users = new List<User>();
         private int _visibleRows = 5;
         private int _scrollIndex;
         private LoginForm _form = new LoginForm();
@@ -17,11 +18,11 @@ namespace TombOfTheMask
         {
             _window = window;
             _scrollIndex = 0;
-            //_usernameTextBox = new TextBox(200, 50, 300, 40, Color.White);
         }
 
         private void LoadUsers()
         {
+            // Read user data from a file and populate the _users list
             StreamReader reader = new StreamReader("/Users/linhbao/Projects/TombOfTheMask/users.txt");
             int numUsers = reader.ReadInteger();
 
@@ -45,7 +46,7 @@ namespace TombOfTheMask
                 }
                 else
                 {
-                    return x.TotalTime.CompareTo(y.TotalTime); // Modified line to sort by TotalTime in ascending order
+                    return x.TotalTime.CompareTo(y.TotalTime);
                 }
             });
 
@@ -65,7 +66,8 @@ namespace TombOfTheMask
         }
 
         private void DisplayHeading()
-        { 
+        {
+            // Draw the heading of the home screen
             SplashKit.DrawText("Tomb Of The Mask", Color.White, 50, 50);
         }
 
@@ -83,8 +85,6 @@ namespace TombOfTheMask
                 int y = 150 + (i - startIndex) * 50;
 
                 // Draw rank
-                SplashKit.DrawText("Ranking table", Color.White, 50, 100);
-
                 SplashKit.DrawText($"{rank}.", Color.White, 50, y);
 
                 // Draw user details

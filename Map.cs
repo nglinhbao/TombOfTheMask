@@ -6,6 +6,7 @@ namespace TombOfTheMask
 {
 	public class Map : Screen
 	{
+        // Dictionary to store player direction values
         private Dictionary<string, Tuple<float, float>> _directionValue = new Dictionary<string, Tuple<float, float>>
         {
             {
@@ -22,6 +23,7 @@ namespace TombOfTheMask
             },
         };
 
+        // Dictionary to store bat values
         private Dictionary<string, int> _batValue = new Dictionary<string, int>
         {
             {
@@ -69,7 +71,7 @@ namespace TombOfTheMask
         }
 
         //Method
-
+        //Method to calculate tile location
         private int TileLocationCalculation(float x, float y)
         {
             int tileX = (int)(x / 50f);
@@ -78,6 +80,7 @@ namespace TombOfTheMask
             return tileIndex;
         }
 
+        //Method to calculate location
         private int[] CalculateLocation(int col, int row)
         {
             List<int> ans = new List<int> { };
@@ -86,6 +89,7 @@ namespace TombOfTheMask
             return ans.ToArray();
         }
 
+        //Method to check if a tile is solid
         private bool Solid(float x, float y, bool playerChecking)
         {
             int tileIndex = TileLocationCalculation(x, y);
@@ -123,6 +127,7 @@ namespace TombOfTheMask
             return true;
         }
 
+        //Method to load the map from a file
         public void LoadMap(int stage)
         {
             _stage = stage;
@@ -215,6 +220,7 @@ namespace TombOfTheMask
             }
         }
 
+        //Method to update player location
         public void MovePlayer()
         {
             Tuple<float, float> value = _directionValue[_player.Way];
@@ -239,6 +245,7 @@ namespace TombOfTheMask
             _invoker.ExecuteCommand();
         }
 
+        //Method to update bat location
         private void UpdateBat(Bat batObj)
         {
             Tuple<float, float> value = _directionValue[batObj.Way];
@@ -253,6 +260,7 @@ namespace TombOfTheMask
             _invoker.ExecuteCommand();
         }
 
+        //Method to update map
         public void UpdateMap()
         {
             CheckWin();
@@ -303,6 +311,7 @@ namespace TombOfTheMask
             RandomlyAddHeart();
         }
 
+        //Method to draw the map
         public override void Show()
         {
             foreach (Tile tile in _tiles)
@@ -321,7 +330,8 @@ namespace TombOfTheMask
             SplashKit.DrawText("Time: " + _time, Color.White, "Arial", 20, 10, 650);
             SplashKit.DrawText("Lives remaining: " + _player.HeartCount, Color.White, "Arial", 20, 10, 675);
         }
-        
+
+        //Method to check if the player move through a trap
         private void CheckTrap()
         {
             Solid(_player.X - 1, _player.Y, true);
@@ -330,6 +340,7 @@ namespace TombOfTheMask
             Solid(_player.X, _player.Y + 50, true);
         }
 
+        //Method to check if 2 objects collide
         private void CollisionDetection()
         {
             for (int i = 0; i < _objects.Count; i++)
@@ -362,6 +373,7 @@ namespace TombOfTheMask
             }
         }
 
+        //Method to check if the player wins
         private void CheckWin()
         {
             // Update time
@@ -382,6 +394,7 @@ namespace TombOfTheMask
             }
         }
 
+        //Method to increment player's heart count
         private void RandomlyAddHeart()
         {
             Random random = new Random();

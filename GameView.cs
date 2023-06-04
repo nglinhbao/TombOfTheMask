@@ -12,7 +12,6 @@ namespace TombOfTheMask
         private WaitingScreen _waitingScreen;
         private LogoutScreen _logoutScreen;
 
-
         public GameView(GameController controller)
         {
             _controller = controller;
@@ -25,6 +24,7 @@ namespace TombOfTheMask
             _home = new Home(Color.Black, _gameWindow);
         }
 
+        // Displays the appropriate screen based on the game state
         public void ShowScreen()
         {
             while (!_gameWindow.CloseRequested)
@@ -36,9 +36,9 @@ namespace TombOfTheMask
                 {
                     _home.Show();
 
-                    if (HomeScreen.Form.Done == true)
+                    if (HomeScreen.Form.Done)
                     {
-                        _controller.Login(); // Call the Login() method in the GameController
+                        _controller.Login();
                         _home = new Home(Color.Black, _gameWindow);
                     }
                 }
@@ -78,15 +78,12 @@ namespace TombOfTheMask
             _gameWindow.Close();
         }
 
+        // Displays the finish screen with the elapsed time
         public void ShowFinishScreen(int elapsedTime)
         {
-            // Clear the screen
             SplashKit.ClearScreen(Color.Black);
-
-            // Draw the finish screen with the elapsed time
             SplashKit.DrawText("Congratulations! You finished the map.", Color.White, 20, 20);
             SplashKit.DrawText($"Time taken: {elapsedTime} seconds", Color.White, 20, 50);
-
             SplashKit.RefreshScreen();
         }
 
@@ -94,6 +91,5 @@ namespace TombOfTheMask
         {
             get { return _home; }
         }
-
     }
 }

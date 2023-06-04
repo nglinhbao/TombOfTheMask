@@ -12,6 +12,7 @@ namespace TombOfTheMask
 
         public void Start()
         {
+            //Check for keys down
             if (SplashKit.KeyReleased(KeyCode.BackspaceKey))
             {
                 if (_inputText.Length > 0)

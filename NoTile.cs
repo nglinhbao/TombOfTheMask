@@ -15,11 +15,13 @@ namespace TombOfTheMask
             _painted = false;
         }
 
+        // Paints the tile
         public void Paint()
         {
             _painted = true;
         }
 
+        // Draws the tile on the screen
         public override void Draw()
         {
             if (_painted)
@@ -31,6 +33,7 @@ namespace TombOfTheMask
             }
         }
 
+        // Maps the background color to a Color object
         private Color GetRectangleColor()
         {
             if (_background == "green")
@@ -47,10 +50,10 @@ namespace TombOfTheMask
             }
         }
 
+        // Gets the value indicating whether the tile has been painted or not
         public bool Painted
         {
             get { return _painted; }
         }
     }
 }
-
