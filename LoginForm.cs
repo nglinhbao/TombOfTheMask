@@ -1,4 +1,5 @@
-﻿using SplashKitSDK;
+﻿using System.Xml.Linq;
+using SplashKitSDK;
 
 namespace TombOfTheMask
 {
@@ -31,7 +32,8 @@ namespace TombOfTheMask
                 }
                 else
                 {
-                    Console.WriteLine("Invalid username. Login failed.");
+                    RegisterUsername(username);
+                    _done = true;
                 }
             }
             else if (SplashKit.KeyReleased(KeyCode.AKey))
@@ -139,7 +141,7 @@ namespace TombOfTheMask
                 _inputText += "z";
             }
 
-            SplashKit.DrawText("Username:", Color.White, "Arial", 18, 50, 450);
+            SplashKit.DrawText("Enter existing username to login/new username to sign up:", Color.White, "Arial", 18, 50, 450);
             SplashKit.DrawRectangle(Color.White, 50, 480, 200, 40);
             SplashKit.DrawText(_inputText, Color.White, "Arial", 18, 60, 490);
         }
@@ -161,14 +163,54 @@ namespace TombOfTheMask
                     _username = name;
                     _stage = stage;
                     _time = time;
-                    Done = true;
                     return true;
                 }
             }
-            int _columns = reader.ReadInteger();
-            int _rows = reader.ReadInteger();
 
             return false;
+        }
+
+        public void RegisterUsername(string username)
+        {
+            string filePath = "/Users/linhbao/Projects/TombOfTheMask/users.txt";
+            List<string> lines = new List<string>();
+
+            // Read all lines from the file
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    lines.Add(line);
+                }
+            }
+
+            // Increment the number of users
+            int numUsers = int.Parse(lines[0]);
+            numUsers++;
+
+            // Update the first line with the new user count
+            lines[0] = numUsers.ToString();
+
+            // Add the new user's information at the end
+            lines.Add(username);
+            lines.Add("1"); // Set stage to 1 for new user
+            lines.Add("0"); // Set time to 0 for new user
+
+            // Write the updated lines back to the file
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (string line in lines)
+                {
+                    writer.WriteLine(line);
+                }
+            }
+
+            _username = username;
+            _stage = 1;
+            _time = 0;
+
+            Console.WriteLine("Registration successful!");
         }
 
         public string Name
