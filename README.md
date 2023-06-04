@@ -9,8 +9,19 @@ The users will be ranked by their current stage and the amount of time that they
 ![TOTM drawio](https://github.com/nglinhbao/TombOfTheMask/assets/110576552/64c52cac-78b1-4033-ae39-9189581e46f2)
 
 # Gameplay
+First, the user will enter homescreen to log in/sign up. There is a game heading and ranking table on this screen. The ranking table is sorted by users' current stage and total time they take for all stages.
+
 <img width="451" alt="image" src="https://github.com/nglinhbao/TombOfTheMask/assets/110576552/3c56c791-2068-46ed-b385-c2cc343aaf0f">
+
+When log in/sign up successfully, the player will enter a map. In order to win, player must go through all tiles and overcome the obstacles. The obstacles include:
+- Trap: if the player hits/goes through the trap, it will be activated. First, it turns yellow, then red. If it is red and the player is nearby, the will lose 1 life.
+- Bat: if the player hit the bat, the player will lose 1 life.
+There are also hearts for player to add more lives
+
 <img width="451" alt="image" src="https://github.com/nglinhbao/TombOfTheMask/assets/110576552/c0859ae3-450a-480c-a6c9-656e939a77f5">
+
+When the player finish a game, they will enter waiting screen to continue or exit.
+
 <img width="451" alt="image" src="https://github.com/nglinhbao/TombOfTheMask/assets/110576552/c36bca48-96e5-42b5-b96f-599592f5b5c1">
 
 
